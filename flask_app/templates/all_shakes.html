@@ -7,8 +7,23 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>All Shakes</title>
 </head>
-<body>
-    <h1 style="color:rgb(255, 89, 0);">Sunkissed <span style="color:rgb(205, 3, 33);">MilkShakes</span></h1>
+<body style="background-color: lightgreen;">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container" style="background-color: rgb(17,202,240);">
+            <a class="navbar-brand" href="/shakes"><h1 style="color:rgb(255, 89, 0);">Sunkissed <span style="color:rgb(205, 3, 33);">MilkShakes</span></h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button type="submit" class="btn btn-success"><a style="color: white;" class="nav-link active" aria-current="page" href="/shakes">All Shakes</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row pt-5">
             <div class="col">
@@ -41,14 +56,14 @@
                 <table class="table text-center table-hover">
                     <thead>
                         <tr>
-                            <th style="color:rgb(205, 3, 33) ;">Like Shake:</th>
-                            <th style="color:rgb(205, 3, 33) ;">Name:</th>
-                            <th style="color:rgb(205, 3, 33) ;">Make In 5 Minutes:</th>
-                            <th style="color:rgb(205, 3, 33) ;">Posted By:</th>
-                            <th style="color:rgb(205, 3, 33) ;">Actions:</th>
+                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Like Shake:</th>
+                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Name:</th>
+                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Make In 5 Minutes:</th>
+                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Posted By:</th>
+                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Actions:</th>
                         </tr>
                     </thead>
-                    <tbody style="background-color:rgb(255, 89, 0);">
+                    <tbody>
                         {% for shake in shakes %}
                             <tr>
                                 <td>
@@ -65,11 +80,11 @@
                                 <td>{{ shake.user.first_name }}</td>
                                 <td>
                                     <div class="card-footer d-flex gap-2 justify-content-center">
-                                        <button type="button" class="btn btn-info"><a href="/shakes/{{ shake.id }}" style=" color: white; text-decoration: none;">Shake Details</a></button> |
+                                        <button class="btn btn-info"><a href="/shakes/{{ shake.id }}" style=" color: white; text-decoration: none;">Shake Details</a></button> |
                                         {% if session.user_id == shake.user_id %}
-                                        <button type="button" class="btn btn-info"><a href="/shakes/{{ shake.id }}/edit" style=" color: white; text-decoration: none;">Edit Shake</a></button> |
-                                        <form action="/shakes/{{ shake.id }}/delete " method="post">
-                                            <button type="submit" class="btn btn-danger" style=" color: white;">Delete</button>
+                                        <button class="btn btn-info"><a href="/shakes/{{ shake.id }}/edit" style=" color: white; text-decoration: none;">Edit Shake</a></button> |
+                                        <form action="/shakes/{{ shake.id }}/delete" method="post">
+                                            <button type="submit" class="btn btn-danger" style="color: white;">Delete</button>
                                         </form>
                                         {% endif %}
                                     </div>

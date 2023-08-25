@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,23 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Edit Shake</title>
 </head>
-<body>
+<body style="background-color: lightgreen;">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container" style="background-color: rgb(17,202,240);">
+            <a class="navbar-brand" href="/shakes"><h1 style="color:rgb(255, 89, 0);">Sunkissed <span style="color:rgb(205, 3, 33);">MilkShakes</span></h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button type="submit" class="btn btn-success"><a style="color: white;" class="nav-link active" aria-current="page" href="/shakes">All Shakes</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row pt-5">
             <div class="col">
@@ -33,28 +49,36 @@
                         <h1>Edit Shake!</h1>
                     </div>
                 </div>
-                <div class="card shadow">
+                <div class="card shadow" style="font-size: large; font-weight: bold;">
                     <div class="card-body">
                         <form action="/shakes/{{ shake.id }}/update" method="post">
                             <input type="hidden" name="shake_id" value="{{ shake.id }}"> 
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name:</label>
+                                <label for="name" class="form-label" style="color:rgb(205, 3, 33) ;">Name:</label>
                                 <input type="text" name="name" id="name" class="form-control" value="{{ shake.name }}" />
                             </div>
                             <div class="mb-3">
-                                <label for="description" class="form-label">Description:</label>
+                                <label for="description" class="form-label" style="color:rgb(205, 3, 33) ;">Description:</label>
                                 <textarea name="description" class="form-control" cols="20" rows="3" >{{ shake.description }}</textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="instructions" class="form-label">Instructions:</label>
+                                <label for="instructions" class="form-label" style="color:rgb(205, 3, 33) ;">Instructions:</label>
                                 <textarea name="instructions"  class="form-control" cols="20" rows="3">{{ shake.instructions }}</textarea>
                             </div>
+                            {# Need to get difficulty to autopopulate when editing#}
                             <div class="mb-3">
-                                <label for="difficulty" class="form-label">Difficulty (1-5):</label>
-                                <input type="number" name="difficulty" id="difficulty" class="form-control" value="{{ shake.difficulty }}">
+                                <label for="difficulty" class="form-label" style="color:rgb(205, 3, 33) ;">Difficulty (1-5):</label>
+                                <select name="difficulty" class="form-select">
+                                    <option>Open this select menu</option>
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                    <option value="5">Level 5</option>
+                                </select>
                             </div>
                             <div class="mb-3">
-                                <p>Make In 5 Minutes?</p>
+                                <p style="color:rgb(205, 3, 33) ;">Make In 5 Minutes?</p>
                                 <input type="radio" name="is_under_5" value= "1" id="is_under_5" {{ "checked" if shake.is_under_5 else "" }}>
                                 <label for="is_under_5">Yes</label>
                                 <input type="radio" name="is_under_5" value="0" id="is_under_5" {{ "checked" if not shake.is_under_5 else "" }}>

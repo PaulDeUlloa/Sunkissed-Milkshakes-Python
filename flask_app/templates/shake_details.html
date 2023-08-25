@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,29 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Shake Details</title>
 </head>
-<body>
+<body style="background-color: lightgreen;">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container" style="background-color: rgb(17,202,240);">
+            <a class="navbar-brand" href="/shakes"><h1 style="color:rgb(255, 89, 0);">Sunkissed <span style="color:rgb(205, 3, 33);">MilkShakes</span></h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button type="submit" class="btn btn-success"><a style="color: white;" class="nav-link active" aria-current="page" href="/shakes">All Shakes</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row pt-5">
             <div class="col">
                 <div class="card shadow mb-3">
                     <div class="card-body">
-                        <h1>Welcome, <span style="color:rgb(33, 205, 125);">{{ user.first_name }}</span>!</h1>
+                        <h1>Welcome, <span style="color:rgb(205, 3, 33) ;">{{ user.first_name }}</span>!</h1>
                     </div>
                     <div class="card-body">
                         <div class="card-header text-end">
@@ -21,22 +37,21 @@
                             <a href="/logout" class="btn btn-danger">Log Out</a>
                         </div>
                         <h1>{{ shake.name }}</h1>
-                        <h3 class="card-header text-end">Posted By: {{ shake.user.first_name }}</h3>
+                        <h3 class="card-header text-end">Posted By: <span style="color:rgb(205, 3, 33) ;">{{ shake.user.first_name }}</span></h3>
                     </div>
                 </div>
-                <div class="card shadow">
+                <div class="card shadow" style="font-size: large; font-weight: bold;">
                     <div class="card-body">
-                        <h2 style="color:rgb(33, 205, 125);">Difficulty Level (1-5):</h2>
+                        <h2 style="color:rgb(205, 3, 33) ;">Difficulty Level (1-5):</h2>
                         <p> {{shake.difficulty}} </p>
-                        <h2 style="color:rgb(33, 205, 125);">Made In 5 Minutes?</h2>
+                        <h2 style="color:rgb(205, 3, 33) ;">Made In 5 Minutes?</h2>
                         <p> {% if shake.is_under_5 == 1 %} Yes {% else %} No {% endif %} </p>
-                        <h2 style="color:rgb(33, 205, 125);">Description:</h2>
+                        <h2 style="color:rgb(205, 3, 33) ;">Description:</h2>
                         <p> {{shake.description}} </p>
-                        <h2 style="color:rgb(33, 205, 125);">Instructions:</h2>
+                        <h2 style="color:rgb(205, 3, 33) ;">Instructions:</h2>
                         <p> {{shake.instructions}} </p>
-                        <h2 style="color:rgb(33, 205, 125);">Shake Likes</h2>
+                        <h2 style="color:rgb(205, 3, 33) ;">Shake Likes:</h2>
                         <p> {{ count }} </p>
-
                     </div>
                 </div>
             </div>
