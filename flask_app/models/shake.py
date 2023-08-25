@@ -47,10 +47,13 @@ class Shake:
         elif len(form_data["instructions"].strip()) < 3:
             is_valid = False
             flash("Instructions must be at least three characters.", "name")
-        # DIFFICULTY VALIDATION
-        if len(form_data["difficulty"].strip()) == 0:
+        if len(form_data["instructions"].strip()) > 600:
             is_valid = False
-            flash("Please enter difficulty level.", "name")
+            flash("Instructions must be at less than 360 characters.", "name")
+        # DIFFICULTY VALIDATION
+        # if (form_data["difficulty"]) == -1:
+        #     is_valid = False
+        #     flash("Please enter difficulty.", "name")
         # UNDER 5 MIN VALIDATION
         if "is_under_5" not in form_data:
             is_valid = False
@@ -113,7 +116,7 @@ class Shake:
         SELECT * FROM shakes
         JOIN users
         ON shakes.user_id = users.id
-        WHERE shake.id = %(shake_id)s;
+        WHERE shakes.id = %(shake_id)s;
         """
 
         data = {"shake_id": shake_id}

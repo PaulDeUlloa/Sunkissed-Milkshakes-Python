@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Shake Details</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-body">
+                        <h1>Welcome, <span style="color:rgb(33, 205, 125);">{{ user.first_name }}</span>!</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-header text-end">
+                            <a href="/shakes" class="btn btn-info">Return to Shakes</a>
+                            <a href="/logout" class="btn btn-danger">Log Out</a>
+                        </div>
+                        <h1>{{ shake.name }}</h1>
+                        <h3 class="card-header text-end">Posted By: {{ shake.user.first_name }}</h3>
+                    </div>
+                </div>
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 style="color:rgb(33, 205, 125);">Difficulty Level (1-5):</h2>
+                        <p> {{shake.difficulty}} </p>
+                        <h2 style="color:rgb(33, 205, 125);">Made In 5 Minutes?</h2>
+                        <p> {% if shake.is_under_5 == 1 %} Yes {% else %} No {% endif %} </p>
+                        <h2 style="color:rgb(33, 205, 125);">Description:</h2>
+                        <p> {{shake.description}} </p>
+                        <h2 style="color:rgb(33, 205, 125);">Instructions:</h2>
+                        <p> {{shake.instructions}} </p>
+                        <h2 style="color:rgb(33, 205, 125);">Shake Likes</h2>
+                        <p> {{ count }} </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,13 +1,8 @@
-import datetime
 from flask_app import app
 from flask import flash, redirect, render_template, request, session
 from flask_app.models.user import User
+from flask_app.models.like import Like
 from flask_app.models.shake import Shake
-
-
-@app.template_filter("format_date")
-def format_date(date):
-    return date.strftime("%Y-%m-%d")
 
 
 @app.route("/shakes")
@@ -61,12 +56,9 @@ def shake_details(shake_id):
 
     user = User.get_by_user_id(session["user_id"])
     shake = Shake.get_one_with_user(shake_id)
-    # count = Like.get_like_count(shake_id)
+    count = Like.get_like_count(shake_id)
 
-    return render_template("shake_details.html", user=user, shake=shake)
-
-
-# count=count
+    return render_template("shake_details.html", user=user, shake=shake, count=count)
 
 
 @app.get("/shakes/<int:shake_id>/edit")
@@ -95,7 +87,7 @@ def update_shake(shake_id):
     return redirect(f"/shakes/{shake_id}")
 
 
-@app.post("/shake/<int:shake_id>/delete")
+@app.post("/shakes/<int:shake_id>/delete")
 def delete_shake(shake_id):
     """Deletes a shake by it's id."""
 

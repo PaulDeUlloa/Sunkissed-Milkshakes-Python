@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>Shake Share</title>
+    <title>All Shakes</title>
 </head>
 <body>
-    <h1 style="color:rgb(205, 65, 33);">Sunkissed <span style="color:rgb(205, 165, 33);">Shakes</span></h1>
+    <h1 style="color:rgb(255, 89, 0);">Sunkissed <span style="color:rgb(205, 3, 33);">MilkShakes</span></h1>
     <div class="container">
         <div class="row pt-5">
             <div class="col">
@@ -27,51 +27,51 @@
                 {# flash message AREA END#}
                 <div class="card shadow mb-3">
                     <div class="card-body">
-                        <h1>Welcome, <span style="color:rgb(33, 205, 125);">{{ user.first_name }}</span>!</h1>
-                    </div>
-                    <div class="card-footer text-end">
-                        <a href="/shakes/new" class="btn btn-success">+ Create</a>
-                            <a href="/logout" class="btn btn-danger">Log Out</a>
+                        <h1>Welcome, <span style="color:rgb(205, 3, 33);">{{ user.first_name }}</span>!</h1>
+                        <div class="card-footer text-end">
+                            <a href="/shakes/new" class="btn btn-success">+ Create</a>
+                                <a href="/logout" class="btn btn-danger">Log Out</a>
+                        </div>
                     </div>
                     <div>
-                        <h2 style="margin: 5px; padding-left: 10px;">All posted shakes:</h2>
+                        <h2 style="margin: 5px; padding-left: 10px;">All Posted Shakes:</h2>
                     </div>
                 </div>
 
                 <table class="table text-center table-hover">
                     <thead>
                         <tr>
-                            <th>Name:</th>
-                            <th>Under 5 Minutes:</th>
-                            <th>Posted By:</th>
-                            <th>Actions:</th>
-                            <th>Like Area:</th>
+                            <th style="color:rgb(205, 3, 33) ;">Like Shake:</th>
+                            <th style="color:rgb(205, 3, 33) ;">Name:</th>
+                            <th style="color:rgb(205, 3, 33) ;">Make In 5 Minutes:</th>
+                            <th style="color:rgb(205, 3, 33) ;">Posted By:</th>
+                            <th style="color:rgb(205, 3, 33) ;">Actions:</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="background-color:rgb(255, 89, 0);">
                         {% for shake in shakes %}
                             <tr>
-                                <td>{{ shake.name }}</td>           
-                                <td>{% if shake.is_under_5 == 1 %} Yes {% else %} No {% endif %}</td>   
-                                <td>{{ shake.user.first_name }}</td>
-                                <td>
-                                    <div class="card-footer d-flex gap-2 justify-content-center">
-                                        <a href="/shakes/{{ shake.id }}">view shake</a> |
-                                        {% if session.user_id == shake.user_id %}
-                                        <a href="/shakes/{{ shake.id }}/edit">edit</a> |
-                                        <form action="/shakes/{{ shake.id }}/delete " method="post">
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
-                                        {% endif %}
-                                    </div>
-                                </td>
                                 <td>
                                     <div class="card-footer d-flex gap-2 justify-content-center">
                                         <form action="/likes/create" method="post">
                                             <input type="hidden" name="user_id" value="{{ session.user_id}}" />
                                             <input type="hidden" name="shake_id" value="{{ shake.id }}" />
-                                            <button type="submit" class="btn btn-success {{ 'disabled' if shake.is_liked_at_by(session.user_id) else '' }}">Like</button>
+                                            <button type="submit" class="btn btn-success {{ 'disabled' if shake.is_liked_at_by(session.user_id) else '' }}" style=" color: white;">Like</button>
                                         </form>
+                                    </div>
+                                </td>
+                                <td>{{ shake.name }}</td>           
+                                <td>{% if shake.is_under_5 == 1 %} Yes {% else %} No {% endif %}</td>   
+                                <td>{{ shake.user.first_name }}</td>
+                                <td>
+                                    <div class="card-footer d-flex gap-2 justify-content-center">
+                                        <button type="button" class="btn btn-info"><a href="/shakes/{{ shake.id }}" style=" color: white; text-decoration: none;">Shake Details</a></button> |
+                                        {% if session.user_id == shake.user_id %}
+                                        <button type="button" class="btn btn-info"><a href="/shakes/{{ shake.id }}/edit" style=" color: white; text-decoration: none;">Edit Shake</a></button> |
+                                        <form action="/shakes/{{ shake.id }}/delete " method="post">
+                                            <button type="submit" class="btn btn-danger" style=" color: white;">Delete</button>
+                                        </form>
+                                        {% endif %}
                                     </div>
                                 </td>
                             </tr>
