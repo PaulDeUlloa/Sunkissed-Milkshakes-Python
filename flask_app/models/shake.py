@@ -140,6 +140,20 @@ class Shake:
         return
 
     @classmethod
+    def delete_likes(cls, shake_id):
+        """Deletes one shake row in the database."""
+
+        query = """
+        DELETE FROM likes
+        WHERE shake_id = %(shake_id)s;
+        """
+
+        data = {"shake_id": shake_id}
+
+        connectToMySQL(DATABASE).query_db(query, data)
+        return
+
+    @classmethod
     def delete_shake(cls, shake_id):
         """Deletes one shake row in the database."""
 

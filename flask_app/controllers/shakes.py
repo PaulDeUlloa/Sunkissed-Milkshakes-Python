@@ -94,6 +94,7 @@ def delete_shake(shake_id):
     if "user_id" not in session:
         flash("Please log in", "login")
         return redirect("/")
+    Shake.delete_likes(shake_id)
     Shake.delete_shake(shake_id)
 
     return redirect("/shakes")
