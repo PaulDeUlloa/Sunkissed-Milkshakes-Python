@@ -12,7 +12,7 @@
 <body style="background-image: linear-gradient(to right, rgb(101, 101, 101) 0%, rgb(255, 255, 255) 50%, black 50%, rgb(204, 10, 78) 100% ); min-height: 100vh;">
     <nav class="navbar" style="background-color: #e3f2fd;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/shakes"><h1 style="color:rgb(190, 0, 211);">Sunkissed <span style="color:rgb(255, 0, 0);">MilkShakes</span></h1></a>
+            <a class="navbar-brand" href="/shakes"><h1 style="color:rgb(126, 126, 126);">Sunkissed <span style="color:rgb(65, 65, 65);">MilkShakes</span></h1></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,32 +41,32 @@
                     {% endif %}
                 {% endwith %}
                 <div class="card shadow">
-                    <h3 class="card-header" style="background-color: rgb(33, 37, 41 ); color: white;">Register</h3>
-                    <div class="card-body">
+                    <h3 class="card-header" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Register</h3>
+                    <div class="card-body" style="background-color: rgb(33, 37, 41 ); color:white;">
                         <form action="/register" method="post">
                             <div class="mb-3">
                                 <label for="first_name" class="form-label">First name:</label>
-                                <input style="background-color: rgb(33, 37, 41 );" type="text" name="first_name" id="first_name" class="form-control">
+                                <input style="background-color: rgb(33, 37, 41 ); color:white;" type="text" name="first_name" id="first_name" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="last_name" class="form-label">Last name:</label>
-                                <input style="background-color: rgb(33, 37, 41 );" type="text" name="last_name" id="last_name" class="form-control">
+                                <input style="background-color: rgb(33, 37, 41 ); color:white" type="text" name="last_name" id="last_name" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address:</label>
-                                <input style="background-color: rgb(33, 37, 41 );" type="text" name="email" id="email" class="form-control">
+                                <input style="background-color: rgb(33, 37, 41 ); color:white;" type="text" name="email" id="email" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password:</label>
-                                <input style="background-color: rgb(33, 37, 41 );" type="password" name="password" id="password" class="form-control">
+                                <input style="background-color: rgb(33, 37, 41 ); color:white" type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="confirm_password" class="form-label">Confirm password:</label>
-                                <input style="background-color: rgb(33, 37, 41 );" type="password" name="confirm_password" id="confirm_password"
+                                <input style="background-color: rgb(33, 37, 41 ); color:white" type="password" name="confirm_password" id="confirm_password"
                                     class="form-control">
                             </div>
                             <div style="text-align: end;">
-                                <button type="submit" class="btn btn-dark">Register</button>
+                                <button type="submit" class="btn btn-light">Register</button>
                             </div>
                         </form>
                     </div>
@@ -85,19 +85,19 @@
                     {% endif %}
                 {% endwith %}
                 <div class="card shadow">
-                    <h3 class="card-header" style="background-color: rgb(135, 25, 126); color: white;">Login</h3>
-                    <div class="card-body">
+                    <h3 class="card-header" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Login</h3>
+                    <div class="card-body" style="background-color: rgb(33, 37, 41 ); color:white;">
                         <form action="/login" method="post">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address:</label>
-                                <input style="background-color: rgb(135, 25, 126)" type="text" name="email" id="email" class="form-control">
+                                <input style="background-color: rgb(33, 37, 41 ); color:white;" type="text" name="email" id="email" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password:</label>
-                                <input style="background-color: rgb(135, 25, 126)" type="password" name="password" id="password" class="form-control">
+                                <input style="background-color: rgb(33, 37, 41 ); color:white;" type="password" name="password" id="password" class="form-control">
                             </div>
                             <div style="text-align: end;">
-                                <button type="submit" class="btn btn-success">Login</button>
+                                <button type="submit" class="btn btn-light">Login</button>
                             </div>
                         </form>
                     </div>
