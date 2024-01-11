@@ -9,22 +9,7 @@
 <body style="background: linear-gradient(217deg, rgba(255, 158, 158, 0.8), rgba(255,0,0,0) 70.71%),
 linear-gradient(127deg, rgba(124, 243, 124, 0.8), rgba(0,255,0,0) 70.71%),
 linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-height: 100vh;">
-    <nav class="navbar" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/shakes"><h1 style="color:rgb(126, 126, 126);">Sunkissed <span style="color:rgb(65, 65, 65);">MilkShakes</span></h1></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <button type="submit" class="btn btn-dark"><a style="color: white;" class="nav-link active" aria-current="page" href="/shakes">All Shakes</a></button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {% include "shared/navbar.html" %}
     <div class="container">
         <div class="row pt-5">
             <div class="col">
