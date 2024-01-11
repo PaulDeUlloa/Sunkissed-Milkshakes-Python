@@ -57,7 +57,7 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                                         <form action="/likes/create" method="post">
                                             <input type="hidden" name="user_id" value="{{ session.user_id}}" />
                                             <input type="hidden" name="shake_id" value="{{ shake.id }}" />
-                                            <button type="submit" class="btn btn-success {{ 'disabled' if shake.is_liked_at_by(session.user_id) else '' }}" style=" color: white; font-weight: 600;">Like</button>
+                                            <button type="submit" class="btn btn-success {{ 'disabled' if shake.is_liked_at_by(session.user_id) else '' }}" style="color: white; font-weight: 600;">Like</button>
                                         </form>
                                     </div>
                                 </td>
@@ -65,10 +65,10 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                                 <td>{% if shake.is_under_5 == 1 %} Yes {% else %} No {% endif %}</td>   
                                 <td>{{ shake.user.first_name }}</td>
                                 <td>
-                                    <div class="card-footer d-flex gap-2 justify-content-center">
-                                        <button class="btn btn-light"><a href="/shakes/{{ shake.id }}" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Shake Details</a></button> |
+                                    <div class="card-footer d-flex gap-3 justify-content-center">
+                                        <button class="btn btn-light"><a href="/shakes/{{ shake.id }}" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Details</a></button>
                                         {% if session.user_id == shake.user_id %}
-                                        <button class="btn btn-light"><a href="/shakes/{{ shake.id }}/edit" style=" color: white; text-decoration: none; font-weight: 600;">Edit Shake</a></button> |
+                                        <button class="btn btn-light"><a href="/shakes/{{ shake.id }}/edit" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Edit</a></button>
                                         <form action="/shakes/{{ shake.id }}/delete" method="post">
                                             <button type="submit" class="btn btn-danger" style="color: white;">Delete</button>
                                         </form>
