@@ -43,10 +43,10 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                 {% endwith %}
                 {# flash message AREA END#}
                 <div class="card shadow mb-3">
-                    <div class="card-body" style="background-color:rgb(126, 126, 126);">
-                        <h1 style="color:rgb(255, 255, 255);">Welcome, <span style="color:rgb(0, 0, 0);">{{ user.first_name }}</span>!</h1>
+                    <div class="card-body" style="background-color:rgb(44,48,52);"> 
+                        <h1 style="color:rgb(255, 255, 255);">Welcome, <span style="color:rgb(255, 124, 1);">{{ user.first_name }}</span>!</h1>
                     </div>
-                    <div style="background-color:rgb(126, 126, 126); display: flex; flex-direction: row; justify-content: space-between;">
+                    <div style="background-color:rgb(44,48,52); display: flex; flex-direction: row; justify-content: space-between;">
                         <h2 style="margin: 5px; padding-left: 10px; color:rgb(255, 255, 255);">All posted shakes:</h2>
                         <div class="card-footer">
                             <a href="/shakes/new" class="btn btn-success">+ Create</a>
@@ -55,14 +55,14 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                     </div>
                 </div>
 
-                <table class="table text-center table-hover table-dark" >
+                <table class="table text-center table-hover table-dark table-striped" >
                     <thead>
                         <tr>
-                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Like Shake:</th>
-                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Name:</th>
-                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Make In 5 Minutes:</th>
-                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Posted By:</th>
-                            <th style="color:rgb(205, 3, 33) ; font-size: large;">Actions:</th>
+                            <th style="color:rgb(255, 255, 255); font-size: large;">Like Shake:</th>
+                            <th style="color:rgb(255, 255, 255); font-size: large;">Name:</th>
+                            <th style="color:rgb(255, 255, 255); font-size: large;">Make In 5 Minutes:</th>
+                            <th style="color:rgb(255, 255, 255); font-size: large;">Posted By:</th>
+                            <th style="color:rgb(255, 255, 255); font-size: large;">Actions:</th>
                         </tr>
                     </thead>
                     <tbody>
