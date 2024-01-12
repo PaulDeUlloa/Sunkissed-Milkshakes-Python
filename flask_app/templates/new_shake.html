@@ -8,22 +8,7 @@
     <title>Create New Shake</title>
 </head>
 <body style="background-color: lightgreen;">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container" style="background-color: rgb(17,202,240);">
-            <a class="navbar-brand" href="/shakes"><h1 style="color:rgb(255, 89, 0);">Sunkissed <span style="color:rgb(205, 3, 33);">MilkShakes</span></h1></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <button type="submit" class="btn btn-success"><a style="color: white;" class="nav-link active" aria-current="page" href="/shakes">All Shakes</a></button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {% include "shared/navbar.html" %}
     <div class="container">
         <div class="row pt-5">
             <div class="col">
