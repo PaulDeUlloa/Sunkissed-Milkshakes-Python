@@ -27,29 +27,29 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                 {% endwith %}
                 {# flash message AREA END#}
                 <div class="card shadow mb-3">
-                    <div class="card-body">
+                    <div class="card-body" style="background-color:rgb(44,48,52); color:rgb(255, 255, 255);">
                         <h1>Editing shake:</h1>
                     </div>
                 </div>
                 <div class="card shadow" style="font-size: large; font-weight: bold;">
-                    <div class="card-body">
+                    <div class="card-body" style="background-color:rgb(44,48,52); color:rgb(255, 255, 255);">
                         <form action="/shakes/{{ shake.id }}/update" method="post">
                             <input type="hidden" name="shake_id" value="{{ shake.id }}"> 
                             <div class="mb-3">
-                                <label for="name" class="form-label" style="color:rgb(205, 3, 33) ;">Name:</label>
+                                <label for="name" class="form-label" style="color: rgb(45, 239, 133);">Name:</label>
                                 <input type="text" name="name" id="name" class="form-control" value="{{ shake.name }}" />
                             </div>
                             <div class="mb-3">
-                                <label for="description" class="form-label" style="color:rgb(205, 3, 33) ;">Description:</label>
+                                <label for="description" class="form-label" style="color: rgb(45, 239, 133);">Description:</label>
                                 <textarea name="description" class="form-control" cols="20" rows="3" >{{ shake.description }}</textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="instructions" class="form-label" style="color:rgb(205, 3, 33) ;">Instructions:</label>
+                                <label for="instructions" class="form-label" style="color: rgb(45, 239, 133);">Instructions:</label>
                                 <textarea name="instructions"  class="form-control" cols="20" rows="3">{{ shake.instructions }}</textarea>
                             </div>
                             {# Need to get difficulty to autopopulate when editing#}
                             <div class="mb-3">
-                                <label for="difficulty" class="form-label" style="color:rgb(205, 3, 33) ;">Difficulty (1-5):</label>
+                                <label for="difficulty" class="form-label" style="color: rgb(45, 239, 133);">Difficulty (1-5):</label>
                                 <select name="difficulty" class="form-select">
                                     <option>Open this select menu</option>
                                     <option value="1">Level 1</option>
@@ -60,7 +60,7 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <p style="color:rgb(205, 3, 33) ;">Make In 5 Minutes?</p>
+                                <p style="color: rgb(45, 239, 133);">Under 5 Minutes?</p>
                                 <input type="radio" name="is_under_5" value= "1" id="is_under_5" {{ "checked" if shake.is_under_5 else "" }}>
                                 <label for="is_under_5">Yes</label>
                                 <input type="radio" name="is_under_5" value="0" id="is_under_5" {{ "checked" if not shake.is_under_5 else "" }}>
