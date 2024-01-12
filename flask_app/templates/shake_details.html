@@ -14,27 +14,27 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
         <div class="row pt-5">
             <div class="col">
                 <div class="card shadow mb-3">
-                    <div class="card-body" style="background-color:rgb(44,48,52); display: flex; flex-direction: row; justify-content: space-between; color:rgb(255, 255, 255); align-items: center;">
-                        <h1 style="color:rgb(255, 124, 1);">Details:</h1>
-                        <h3>Posted By: <span style="color:rgb(255, 124, 1);">{{ shake.user.first_name }}</span></h3>
+                    <div class="card-body" style="background-image: linear-gradient( to right, #4E65FF, #92EFFD); display: flex; flex-direction: row; justify-content: space-between; color:rgb(255, 255, 255); align-items: center;">
+                        <h1 style="color:black;">Details:</h1>
+                        <h3>Posted By: <span style="color:black;">{{ shake.user.first_name }}</span></h3>
                     </div>
-                    <div class="card-body" style="background-color:rgb(44,48,52); color:rgb(255, 255, 255);">
-                        <h1 class="card-header text-center">{{ shake.name }}</h1>
+                    <div class="card-body" style="background-image: linear-gradient( to right, #4E65FF, #92EFFD); color:rgb(255, 255, 255);">
+                        <h1 class=" text-center">{{ shake.name }}</h1>
                     </div>
                 </div>
-                <div class="card shadow mb-3" style="font-size: medium; font-weight: bold; background-color:rgb(44,48,52); color:rgb(255, 255, 255);">
+                <div class="card shadow mb-3" style="font-size:large; font-weight: bold; background-image: linear-gradient( to right, #4E65FF, #92EFFD); color:rgb(255, 255, 255);">
                     <div class="card-body">
                         <div style="margin-left: 8px;">
-                            <h3 style="color:rgb(255, 124, 1);">Difficulty Level (1-5):</h3>
+                            <h3 style="color:black;">Difficulty Level (1-5):</h3>
                             <p> {{shake.difficulty}} </p>
-                            <h3 style="color:rgb(255, 124, 1);">Under 5 Minutes?</h3>
+                            <h3 style="color:black;">Under 5 Minutes?</h3>
                             <p> {% if shake.is_under_5 == 1 %} Yes {% else %} No {% endif %} </p>
-                            <h3 style="color:rgb(255, 124, 1);">Description:</h3>
+                            <h3 style="color:black;">Description:</h3>
                             <p> {{shake.description}} </p>
-                            <h3 style="color:rgb(255, 124, 1);">Instructions:</h3>
+                            <h3 style="color:black;">Instructions:</h3>
                             <p> {{shake.instructions}} </p>
                             
-                            <h3 style="color:rgb(255, 124, 1);">Shake Likes:</h3>
+                            <h3 style="color:black;">Shake Likes:</h3>
                             <p> {{ count }} </p>
                         </div>
                         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
