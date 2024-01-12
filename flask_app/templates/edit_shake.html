@@ -28,7 +28,7 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                 {# flash message AREA END#}
                 <div class="card shadow mb-3">
                     <div class="card-body">
-                        <h1>Edit Shake!</h1>
+                        <h1>Editing shake:</h1>
                     </div>
                 </div>
                 <div class="card shadow" style="font-size: large; font-weight: bold;">
@@ -66,7 +66,7 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                                 <input type="radio" name="is_under_5" value="0" id="is_under_5" {{ "checked" if not shake.is_under_5 else "" }}>
                                 <label for="is_under_5">No</label>
                             </div>
-                            <div style="text-align: end;">
+                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
                                 <button class="btn btn-light"><a href="/shakes" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Cancel</a></button>
                                 <button type="submit" class="btn btn-light" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Edit Shake</button>
                             </div>
