@@ -7,7 +7,9 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Create New Shake</title>
 </head>
-<body style="background-color: lightgreen;">
+<body style="background: linear-gradient(217deg, rgba(255, 158, 158, 0.8), rgba(255,0,0,0) 70.71%),
+linear-gradient(127deg, rgba(124, 243, 124, 0.8), rgba(0,255,0,0) 70.71%),
+linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-height: 100vh;">
     {% include "shared/navbar.html" %}
     <div class="container">
         <div class="row pt-5">
@@ -27,11 +29,7 @@
                 {# flash message AREA END#}
                 <div class="card shadow mb-3">
                     <div class="card-body">
-                        <div class="card-header text-end">
-                            <a href="/shakes" class="btn btn-info">Return to Shakes</a>
-                            <a href="/logout" class="btn btn-danger">Log Out</a>
-                        </div>
-                        <h1>Add a New Shake!</h1>
+                        <h1 style="text-align: center;">Add a New Shake!</h1>
                     </div>
                 </div>
                 <div class="card shadow">
