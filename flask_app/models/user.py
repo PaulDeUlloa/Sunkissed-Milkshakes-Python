@@ -101,7 +101,7 @@ class User:
 
     @classmethod
     def get_by_email(cls, email):
-        """Finds a user by their email adress."""
+        """Finds a user by their email address."""
 
         query = """
         SELECT * FROM users
@@ -117,13 +117,14 @@ class User:
 
     @classmethod
     def get_by_user_id(cls, user_id):
-        """Finds a user by their user_id adress."""
+        """Finds a user by their user_id."""
 
         query = """
         SELECT * FROM users
         WHERE id = %(user_id)s;
         """
         # ^^^^^^ IMPORTANT, just "id" AFTER WHERE ^^^
+
         data = {"user_id": user_id}
         results = connectToMySQL(DATABASE).query_db(query, data)
         print(results)
