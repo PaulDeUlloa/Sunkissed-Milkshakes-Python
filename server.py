@@ -8,4 +8,4 @@ import flask_app.controllers.likes
 # Add other table name ABOVE^
 
 if __name__ == "__main__":
-    app.run(debug=True, host="localhost", port=8018)
+    app.run(debug=True)
