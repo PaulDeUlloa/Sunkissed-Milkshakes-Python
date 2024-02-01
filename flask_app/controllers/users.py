@@ -54,24 +54,31 @@ def register_user():
 def login():
     """Processes the LOGIN FORM."""
     # validate FORM first
+    print("Inside the login function.")
     if not User.login_is_valid(request.form):
+        print("login invalid.")
         return redirect("/")
     # check if user exists by email
     potential_user = User.get_by_email(request.form["email"])
+    print(potential_user)
     # if they dont exist, flash please register and redirect
     if not potential_user:
         flash("Invalid credentials.", "login")
+        print("No user.")
         return redirect("/")
     # check password if they exist
     user = potential_user
+    print(user.first_name)
 
     # if password is wrong, flash incorrect and redirect
     if not bcrypt.check_password_hash(user.password, request.form["password"]):
         flash("Invalid credentials.", "login")
+        print("invalid password.")
         return redirect("/")
 
     # put the user's id into session
     session["user_id"] = user.id
+    print(session["user_id"])
 
     # redirect to the shake
     flash("Thank you for logging in.", "login")
