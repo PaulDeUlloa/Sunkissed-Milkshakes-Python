@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Create New Shake</title>
 </head>
+
 <body style="background: linear-gradient(217deg, rgba(255, 158, 158, 0.8), rgba(255,0,0,0) 70.71%),
 linear-gradient(127deg, rgba(124, 243, 124, 0.8), rgba(0,255,0,0) 70.71%),
 linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-height: 100vh;">
@@ -15,24 +18,26 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
             <div class="col">
                 {# flash message AREA START#}
                 {% with messages = get_flashed_messages(with_categories=True) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            {% if category == 'name' %}
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">{{message}}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>                            
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
+                {% if messages %}
+                {% for category, message in messages %}
+                {% if category == 'name' %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">{{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
                 {% endwith %}
                 {# flash message AREA END#}
                 <div class="card shadow mb-3">
-                    <div class="card-body"  style="background-image: linear-gradient( to right, #C33764 , #1D2671); color:rgb(255, 255, 255);">
+                    <div class="card-body"
+                        style="background-image: linear-gradient( to right, #C33764 , #1D2671); color:rgb(255, 255, 255);">
                         <h1 style="text-align: center;">Create shake:</h1>
                     </div>
                 </div>
                 <div class="card shadow">
-                    <div class="card-body" style="background-image: linear-gradient( to right, #C33764 , #1D2671); color:rgb(255, 255, 255);">
+                    <div class="card-body"
+                        style="background-image: linear-gradient( to right, #C33764 , #1D2671); color:rgb(255, 255, 255);">
                         <form action="/shakes/create" method="post">
                             <input type="hidden" name="user_id" value="{{ user.id }}">
                             <div class="mb-3">
@@ -40,17 +45,20 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                                 <input type="text" name="name" id="name" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="description" class="form-label" style="font-weight: 700;">Description:</label>
+                                <label for="description" class="form-label"
+                                    style="font-weight: 700;">Description:</label>
                                 <textarea name="description" class="form-control" cols="20" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="instructions" class="form-label" style="font-weight: 700;">Instructions:</label>
-                                <textarea name="instructions"  class="form-control" cols="20" rows="3"></textarea>
+                                <label for="instructions" class="form-label"
+                                    style="font-weight: 700;">Instructions:</label>
+                                <textarea name="instructions" class="form-control" cols="20" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="difficulty" class="form-label" style="font-weight: 700;">Difficulty Level (1-5):</label>
+                                <label for="difficulty" class="form-label" style="font-weight: 700;">Difficulty Level
+                                    (1-5):</label>
                                 <select for="difficulty" name="difficulty" class="form-select">
-                                    <option>Open this select menu</option>
+                                    <option value=" ">Open this select menu</option>
                                     <option value="1">Level 1</option>
                                     <option value="2">Level 2</option>
                                     <option value="3">Level 3</option>
@@ -60,14 +68,18 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                             </div>
                             <div class="mb-3">
                                 <p style="font-weight: 700;">Under 5 Minutes?</p>
-                                <input type="radio" name="is_under_5" value= "1" id="is_under_5">
+                                <input type="radio" name="is_under_5" value="1" id="is_under_5">
                                 <label for="is_under_5">Yes</label>
                                 <input type="radio" name="is_under_5" value="0" id="is_under_5">
                                 <label for="is_under_5">No</label>
                             </div>
-                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
-                                <button class="btn btn-light"><a href="/shakes" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Cancel</a></button>
-                                <button type="submit" class="btn btn-light" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Create Shake</button>
+                            <div
+                                style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
+                                <button class="btn btn-light"><a href="/shakes"
+                                        style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Cancel</a></button>
+                                <button type="submit" class="btn btn-light"
+                                    style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Create
+                                    Shake</button>
                             </div>
                         </form>
                     </div>
@@ -75,9 +87,13 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
             </div>
         </div>
     </div>
-    <footer style="display: flex; justify-content: center; width: 100%; position: absolute; bottom: 0; height: 2.5rem; ">
+    <footer
+        style="display: flex; justify-content: center; width: 100%; position: absolute; bottom: 0; height: 2.5rem; ">
         {% include "shared/copyright.html" %}
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
