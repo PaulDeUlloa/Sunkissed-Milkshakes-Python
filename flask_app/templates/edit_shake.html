@@ -61,15 +61,20 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                             {# Need to get difficulty to autopopulate when editing#}
                             <div class="mb-3">
                                 <label for="difficulty" class="form-label" style="color: rgb(45, 239, 133);">Difficulty
-                                    (1-5):</label>
+                                    (1-5):
+                                </label>
+
+
                                 <select for="difficulty" name="difficulty" class="form-select">
-                                    <option value=" ">Open this select menu</option>
+                                    <option value=" ">Must be reselected! | Current Level: {{shake.difficulty}}
+                                    </option>
                                     <option value="1">Level 1</option>
                                     <option value="2">Level 2</option>
                                     <option value="3">Level 3</option>
                                     <option value="4">Level 4</option>
                                     <option value="5">Level 5</option>
                                 </select>
+
                             </div>
                             <div class="mb-3">
                                 <p style="color: rgb(45, 239, 133);">Under 5 Minutes?</p>
