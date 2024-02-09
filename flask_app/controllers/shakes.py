@@ -28,12 +28,13 @@ def new_shake():
         return redirect("/")
 
     user = User.get_by_user_id(session["user_id"])
+
     return render_template("new_shake.html", user=user)
 
 
 @app.post("/shakes/create")
 def create_shake():
-    """Processes the new shake table form"""
+    """Process the new shake table form"""
 
     if "user_id" not in session:
         flash("Please log in", "login")
@@ -83,6 +84,9 @@ def update_shake(shake_id):
         flash("Please log in", "login")
         return redirect("/")
 
+    if not Shake.edit_form_is_valid(request.form):
+        return redirect(f"/shakes/{shake_id}/edit")
+
     Shake.update_shake(request.form)
     return redirect(f"/shakes/{shake_id}")
 
@@ -94,6 +98,7 @@ def delete_shake(shake_id):
     if "user_id" not in session:
         flash("Please log in", "login")
         return redirect("/")
+
     Shake.delete_likes(shake_id)
     Shake.delete_shake(shake_id)
 

@@ -54,7 +54,8 @@ class Shake:
         if len(form_data["difficulty"].strip()) == 0:
             is_valid = False
             flash("Please enter difficulty.", "name")
-        # elif len(form_data["difficulty"].strip()) != [1, 2, 3, 4, 5]:
+        #! Should work if I update the new_shake.html difficulty input type
+        # elif int(form_data["difficulty"].strip()) < 5:
         #     is_valid = False
         #     flash("Difficulty must be between 1-5 values.", "name")
         # UNDER 5 MIN VALIDATION
@@ -64,48 +65,48 @@ class Shake:
 
         return is_valid
 
-    # @staticmethod
-    # def form_is_valid(form_data):
-    #     """Validates the edit shake form."""
+    @staticmethod
+    def edit_form_is_valid(form_data):
+        """Validates the edit shake form."""
 
-    #     is_valid = True
-    #     # NAME VALIDATION
-    #     if len(form_data["name"].strip()) == 0:
-    #         is_valid = False
-    #         flash("Please enter name.", "edit")
-    #     elif len(form_data["name"].strip()) < 3:
-    #         is_valid = False
-    #         flash("Name must be at least three characters.", "edit")
-    #     # DESCRIPTION VALIDATION
-    #     if len(form_data["description"].strip()) == 0:
-    #         is_valid = False
-    #         flash("Please enter description.", "edit")
-    #     elif len(form_data["description"].strip()) < 3:
-    #         is_valid = False
-    #         flash("Description must be at least three characters.", "edit")
-    #     # INSTRUCTIONS VALIDATION
-    #     if len(form_data["instructions"].strip()) == 0:
-    #         is_valid = False
-    #         flash("Please enter instructions.", "edit")
-    #     elif len(form_data["instructions"].strip()) < 3:
-    #         is_valid = False
-    #         flash("Instructions must be at least three characters.", "edit")
-    #     if len(form_data["instructions"].strip()) > 600:
-    #         is_valid = False
-    #         flash("Instructions must be at less than 360 characters.", "edit")
-    #     # DIFFICULTY VALIDATION
-    #     if len(form_data["difficulty"].strip()) == 0:
-    #         is_valid = False
-    #         flash("Please enter difficulty.", "edit")
-    #     # elif len(form_data["difficulty"].strip()) != [1, 2, 3, 4, 5]:
-    #     #     is_valid = False
-    #     #     flash("Difficulty must be between 1-5 values.", "edit")
-    #     # UNDER 5 MIN VALIDATION
-    #     if "is_under_5" not in form_data:
-    #         is_valid = False
-    #         flash("Please enter if shake can be made under 5 minutes.", "edit")
+        is_valid = True
+        # NAME VALIDATION
+        if len(form_data["name"].strip()) == 0:
+            is_valid = False
+            flash("Please enter name.", "edit")
+        elif len(form_data["name"].strip()) < 3:
+            is_valid = False
+            flash("Name must be at least three characters.", "edit")
+        # DESCRIPTION VALIDATION
+        if len(form_data["description"].strip()) == 0:
+            is_valid = False
+            flash("Please enter description.", "edit")
+        elif len(form_data["description"].strip()) < 3:
+            is_valid = False
+            flash("Description must be at least three characters.", "edit")
+        # INSTRUCTIONS VALIDATION
+        if len(form_data["instructions"].strip()) == 0:
+            is_valid = False
+            flash("Please enter instructions.", "edit")
+        elif len(form_data["instructions"].strip()) < 3:
+            is_valid = False
+            flash("Instructions must be at least three characters.", "edit")
+        if len(form_data["instructions"].strip()) > 600:
+            is_valid = False
+            flash("Instructions must be at less than 360 characters.", "edit")
+        # DIFFICULTY VALIDATION
+        if len(form_data["difficulty"].strip()) == 0:
+            is_valid = False
+            flash("Please enter difficulty.", "edit")
+        # elif len(form_data["difficulty"].strip()) != [1, 2, 3, 4, 5]:
+        #     is_valid = False
+        #     flash("Difficulty must be between 1-5 values.", "edit")
+        # UNDER 5 MIN VALIDATION
+        if "is_under_5" not in form_data:
+            is_valid = False
+            flash("Please enter if shake can be made under 5 minutes.", "edit")
 
-    #     return is_valid
+        return is_valid
 
     # we reference the class itself and not the object when we have @classmethod as the decorator
 
