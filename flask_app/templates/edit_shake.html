@@ -22,12 +22,6 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                 {% for category, message in messages %}
                 {% if category == 'edit' %}
 
-
-                {# ^^ Need to get edit page validation to work, tried 'edit' above instead of register and name #}
-
-
-
-
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">{{message}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
