@@ -7,4 +7,4 @@
 <p>
   Once a user creates an account they can like and share their favorite milkshakes with those in the Sunkissed Milkshakes community
 </p>
-# Sunkissed-Milkshakes-Python
+
