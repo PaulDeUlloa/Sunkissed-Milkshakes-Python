@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Shake Details</title>
 </head>
+
 <body style="background: linear-gradient(217deg, rgba(255, 158, 158, 0.8), rgba(255,0,0,0) 70.71%),
 linear-gradient(127deg, rgba(124, 243, 124, 0.8), rgba(0,255,0,0) 70.71%),
 linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-height: 100vh;">
@@ -14,41 +17,50 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
         <div class="row pt-5">
             <div class="col">
                 <div class="card shadow mb-3">
-                    <div class="card-body" style="background-image: linear-gradient( to right, #4E65FF, #92EFFD); display: flex; flex-direction: row; justify-content: space-between; color:rgb(255, 255, 255); align-items: center;">
+                    <div class="card-body"
+                        style="background-image: linear-gradient( to right, #614385, #516395); display: flex; flex-direction: row; justify-content: space-between; color:rgb(255, 255, 255); align-items: center;">
                         <h1 style="color:black;">Details:</h1>
                         <h3>Posted By: <span style="color:black;">{{ shake.user.first_name }}</span></h3>
                     </div>
-                    <div class="card-body" style="background-image: linear-gradient( to right, #4E65FF, #92EFFD); color:rgb(255, 255, 255);">
+                    <div class="card-body"
+                        style="background-image: linear-gradient( to right, #614385, #516395); color:rgb(255, 255, 255);">
                         <h1 class=" text-center">{{ shake.name }}</h1>
                     </div>
                 </div>
-                <div class="card shadow mb-3" style="font-size:large; font-weight: bold; background-image: linear-gradient( to right, #4E65FF, #92EFFD); color:rgb(255, 255, 255);">
+                <div class="card shadow mb-3"
+                    style="font-size:large; font-weight: bold; background-image: linear-gradient( to right, #614385, #516395); color:rgb(255, 255, 255);">
                     <div class="card-body">
                         <div style="margin-left: 8px;">
-                            <h3  class="card-header" style="color:black;">Difficulty Level (1-5):</h3>
+                            <h3 class="card-header" style="color:black;">Difficulty Level (1-5):</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{shake.difficulty}} </p>
-                            <h3  class="card-header" style="color:black;">Under 5 Minutes?</h3>
-                            <p style="margin-left: 8px;" class="card-text"> {% if shake.is_under_5 == 1 %} Yes {% else %} No {% endif %} </p>
-                            <h3  class="card-header" style="color:black;">Description:</h3>
+                            <h3 class="card-header" style="color:black;">Under 5 Minutes?</h3>
+                            <p style="margin-left: 8px;" class="card-text"> {% if shake.is_under_5 == 1 %} Yes {% else
+                                %} No {% endif %} </p>
+                            <h3 class="card-header" style="color:black;">Description:</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{shake.description}} </p>
-                            <h3  class="card-header" style="color:black;">Instructions:</h3>
+                            <h3 class="card-header" style="color:black;">Instructions:</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{shake.instructions}} </p>
-                            
-                            <h3  class="card-header" style="color:black;">Shake Likes:</h3>
+
+                            <h3 class="card-header" style="color:black;">Shake Likes:</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{ count }} </p>
                         </div>
                         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-                            <button class="btn btn-light"><a href="/shakes" style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Home</a></button>
+                            <button class="btn btn-light"><a href="/shakes"
+                                    style=" color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">Home</a></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer style="display: flex; justify-content: center; width: 100%; position: absolute; bottom: 0; height: 2.5rem; ">
+    <footer
+        style="display: flex; justify-content: center; width: 100%; position: absolute; bottom: 0; height: 2.5rem; ">
         {% include "shared/copyright.html" %}
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
