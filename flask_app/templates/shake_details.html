@@ -19,8 +19,8 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                 <div class="card shadow mb-3">
                     <div class="card-body"
                         style="background-image: linear-gradient( to right, #614385, #516395); display: flex; flex-direction: row; justify-content: space-between; color:rgb(255, 255, 255); align-items: center;">
-                        <h1 style="color:black;">Details:</h1>
-                        <h3>Posted By: <span style="color:black;">{{ shake.user.first_name }}</span></h3>
+                        <h1 style="color:yellow;">Details:</h1>
+                        <h3>Posted By: <span style="color:yellow;">{{ shake.user.first_name }}</span></h3>
                     </div>
                     <div class="card-body"
                         style="background-image: linear-gradient( to right, #614385, #516395); color:rgb(255, 255, 255);">
@@ -31,17 +31,17 @@ linear-gradient(336deg, rgba(50, 50, 250, 0.8), rgba(0,0,255,0) 70.71%); min-hei
                     style="font-size:large; font-weight: bold; background-image: linear-gradient( to right, #614385, #516395); color:rgb(255, 255, 255);">
                     <div class="card-body">
                         <div style="margin-left: 8px;">
-                            <h3 class="card-header" style="color:black;">Difficulty Level (1-5):</h3>
+                            <h3 class="card-header" style="color:yellow;">Difficulty Level (1-5):</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{shake.difficulty}} </p>
-                            <h3 class="card-header" style="color:black;">Under 5 Minutes?</h3>
+                            <h3 class="card-header" style="color:yellow;">Under 5 Minutes?</h3>
                             <p style="margin-left: 8px;" class="card-text"> {% if shake.is_under_5 == 1 %} Yes {% else
                                 %} No {% endif %} </p>
-                            <h3 class="card-header" style="color:black;">Description:</h3>
+                            <h3 class="card-header" style="color:yellow;">Description:</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{shake.description}} </p>
-                            <h3 class="card-header" style="color:black;">Instructions:</h3>
+                            <h3 class="card-header" style="color:yellow;">Instructions:</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{shake.instructions}} </p>
 
-                            <h3 class="card-header" style="color:black;">Shake Likes:</h3>
+                            <h3 class="card-header" style="color:yellow;">Shake Likes:</h3>
                             <p style="margin-left: 8px;" class="card-text"> {{ count }} </p>
                         </div>
                         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
