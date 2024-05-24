@@ -54,7 +54,7 @@ class Shake:
         if len(form_data["difficulty"].strip()) == 0:
             is_valid = False
             flash("Please enter difficulty.", "name")
-        #! Should work if I update the new_shake.html difficulty input type
+        # TODO: Should work if I update the new_shake.html difficulty input type
         # elif int(form_data["difficulty"].strip()) < 5:
         #     is_valid = False
         #     flash("Difficulty must be between 1-5 values.", "name")

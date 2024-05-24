@@ -123,7 +123,7 @@ class User:
         SELECT * FROM users
         WHERE id = %(user_id)s;
         """
-        # ^^^^^^ IMPORTANT, just "id" AFTER WHERE ^^^
+        #!IMPORTANT, just "id" AFTER WHERE ^^^
 
         data = {"user_id": user_id}
         results = connectToMySQL(DATABASE).query_db(query, data)
