@@ -8,6 +8,8 @@ DATABASE = "python_project"
 
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
+# TODO: possibly add more complex login requirements.
+
 
 class User:
     def __init__(self, data):
