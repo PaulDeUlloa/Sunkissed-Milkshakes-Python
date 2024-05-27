@@ -62,6 +62,9 @@ def shake_details(shake_id):
     return render_template("shake_details.html", user=user, shake=shake, count=count)
 
 
+# If i want to add more details, like a picture i would need to create the variable here.
+
+
 @app.get("/shakes/<int:shake_id>/edit")
 def edit_shake(shake_id):
     """Displays the edit_shake.html template."""
