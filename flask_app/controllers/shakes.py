@@ -63,6 +63,7 @@ def shake_details(shake_id):
 
 
 # If i want to add more details, like a picture i would need to create the variable here.
+# Given the current UI, pictures would be a good addition.
 
 
 @app.get("/shakes/<int:shake_id>/edit")
